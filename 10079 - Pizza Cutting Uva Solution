@@ -1,0 +1,31 @@
+
+/*তুমি  n  সংখ্যক লাইন একে সরবোচ্চ কত টুকরা করতে পারবে ???? যখন তুমি একটা লাইনও দেও নি , তখন মাত্র ওই একটা টুকরা ছিলো , A ( 0 ) =1
+
+ধরো তুমি , n তম লাইন দিয়ে কাটতে যাচ্ছো , তাহলে - তোমার আগের ( n -১ ) সংখ্যক সকল লাইনকে ইন্টারসেক্ট করতে হবে , এর মানে , নতুন আরো  n টি টুকরা'র  জন্ম হবে , তাই না ?? তাহলে মোট টুকরা হবে , A ( n )
+
+A ( n ) = A ( n-1 ) +n  + A ( 0 )
+A ( n ) =  A ( n-2 ) + ( n -1 ) + n + A ( 0 )
+A ( n ) = n + n-1 + n-2 +......+ 1 + A ( 0 )
+A ( n ) = n*(n+1)/2 + A (0)
+A (n)  = n*(n+1)/2 + 1
+///
+
+Now , U can do ............................................
+*/
+
+#include<bits/stdc++.h>
+
+// Nayeem Shahriar Joy , Electrical & Electronic Engineering , University of Rajshahi.
+
+using namespace std;
+
+   int main(){
+    long long n;
+    while(scanf("%lld", &n)){
+        if(n < 0)
+            return 0;
+
+        printf("%lld\n", 1 + n * (n + 1) / 2);
+    }
+    return 0;
+}
