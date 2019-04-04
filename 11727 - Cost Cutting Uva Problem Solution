@@ -1,0 +1,25 @@
+
+#include<bits/stdc++.h>
+
+// Nayeem Shahriar Joy, Electrical & Electronic Engineering , University of Rajshahi.
+
+using namespace std;
+int main()
+{
+
+    int t,a,b,c;
+    cin>>t;
+        for(int i=1;i<=t;i++){
+           vector<int>joy;
+           cin>>a>>b>>c;
+           joy.push_back(a);
+           joy.push_back(b);
+           joy.push_back(c);
+           sort(joy.begin(),joy.end());
+           cout<<"Case "<<i<<": ";
+           cout<<joy[1]<<endl;
+        }
+
+
+    return 0;
+}
