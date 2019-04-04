@@ -1,0 +1,42 @@
+//
+
+*Say , Four Lengths Are  a , b , c , d
+
+* if(a==b &&b==c && c==d &&a==d)  then square
+
+* if( (a==c && b==d)||(a==b && c==d)||(b==c && a==d)) then rectangular 
+
+* if it is not a square & rectangular , then by satisfying the condition 
+a<=b+c+d  && b<=a+c+d && c<=b+c+d   it can be  quadrangle
+
+////
+
+
+Now Code .......................
+
+
+
+#include<bits/stdc++.h>
+
+// Nayeem Shahriar Joy , Electrical & Electronic Engineering , University of Rajshahi.
+
+using namespace std;
+
+
+int main()
+{
+    long long int a, b, c, d;
+    int i, t;
+    while((scanf("%d", &t)==1))
+    {
+        for(i=1; i<=t; i++)
+        {
+            scanf("%lld %lld %lld %lld", &a, &b, &c, &d);
+            if(a==b && b==c && c==d) printf("square\n");
+            else if( (a==b && c==d) || (b==c && d==a) || (a==c&& b==d)) printf("rectangle\n");
+            else if((a<=b+c+d) && (b<=c+d+a) && (c<=d+a+b) && (d<=a+b+c) ) printf("quadrangle\n");
+            else printf("banana\n");
+        }
+    }
+}
+ 
