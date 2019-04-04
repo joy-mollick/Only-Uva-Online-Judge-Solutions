@@ -1,0 +1,21 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+// Nayeem Shahriar Joy , Electrical & Electronic Engineer9ng, University of Rajshahi.
+
+int main() {
+    int T,d;
+    cin >> T;
+    for(int t = 0; t< T; t++){
+        int n;
+        cin >> n;
+        vector<int>distance;
+        for(int i = 0; i < n; i++){
+            cin >> d;
+            distance.push_back(d);
+        }
+        sort(distance.begin(),distance.end());
+        cout << 2*(distance[n-1]-distance[0]) << endl;
+    }
+    return 0;
+}
