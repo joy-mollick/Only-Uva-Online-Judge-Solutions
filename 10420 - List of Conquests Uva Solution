@@ -1,0 +1,38 @@
+
+///
+
+* Everyline Consists a country name as a first word ,so we have to take it as a string & we have to take other charcters using getline .
+* Using map we can store that first word ( country ) & Store its frequencies
+* map is manually sorted  . As country name stored as a key ( left side ) so , it will be automatically
+sorted .
+
+////
+
+See Code ...........................................................
+
+#include<bits/stdc++.h>
+
+// Nayeem Shahriar Joy , Applied Physics & Electronic Engineering , University of Rajshahi.
+
+using namespace std;
+
+
+    int main()
+{
+    map<string,int>frequency;
+    map<string,int>::iterator it;
+    string s1,s2;
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        cin>>s1;
+        getline(cin,s2);
+        frequency[s1]++;
+    }
+    for( it=frequency.begin();it!=frequency.end();it++)
+    {
+        cout<<it->first<<" "<<it->second<<endl;
+    }
+    return 0;
+}
