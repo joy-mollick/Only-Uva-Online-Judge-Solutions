@@ -1,3 +1,6 @@
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
 
 import java.math.BigInteger;
 import java.io.BufferedReader;
@@ -21,7 +24,7 @@ class Main
                 line = inputHandler.readLine();
             }
         } catch (Exception e) {
-            // I don't care java....
+            
         }
         
         System.out.println(sum.toString());
