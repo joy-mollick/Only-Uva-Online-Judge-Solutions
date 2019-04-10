@@ -3,6 +3,9 @@
 // groupwise(8) and turned will be (00000001  00000000 00000000 00000000) which means to be 16777216 .
 // we use pointer char* which can hold the 4 bytes by grouping(8) then just reverse this char* pointer using swap easily .As this is pointer ,so the rev automatically changed.
 
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
 
 #include <bits/stdc++.h>
 using namespace std;
