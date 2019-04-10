@@ -1,0 +1,68 @@
+
+
+// Nothing Else, Just Use a Vector pair to keep Count string and it's inversion number by bubble sort and do a bubble sort of vector pair also as stable_sort wanted to keep serial maintaining if inversion number equal
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void sort(vector< pair<int,string> >&v)
+{
+     for(int i=0;i<v.size()-1;i++)
+    {
+        for(int j=0;j<v.size()-i-1;j++)
+        {
+            if(v[j].first>v[j+1].first)
+            {
+                swap(v[j],v[j+1]);
+            }
+        }
+    }
+}
+
+int inversion(string s)
+{
+    int count=0;
+    for(int i=0;i<s.size()-1;i++)
+    {
+        for(int j=0;j<s.size()-i-1;j++)
+        {
+            if(s[j]>s[j+1])
+            {
+                count++;
+                swap(s[j],s[j+1]);
+            }
+        }
+    }
+    return count;
+}
+
+int main()
+{
+    int tc,length,num;
+    unsigned blank = 0;
+    string s;
+    cin>>tc;
+    while(tc--)
+    {
+        cin>>length>>num;
+        vector< pair<int,string> >v;
+        while(num--)
+        {
+            cin>>s;
+            v.push_back(make_pair(inversion(s),s));
+        }
+        sort(v);
+        if (blank) cout<<endl;
+        blank = 1;
+        for(int i=0;i<v.size();i++)
+        {
+            cout<<v[i].second<<endl;
+        }
+    }
+    return 0;
+}
