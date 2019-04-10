@@ -1,0 +1,93 @@
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+bool vowel(char c)
+{
+    return c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='y';
+}
+
+int main()
+{
+    string s;
+    while(getline(cin,s))
+    {
+        if(s=="e/o/i")
+        {
+            break;
+        }
+        int count=0;
+        int index=0;
+        while(s[index]!='/')
+        {
+            if(vowel(s[index]))
+            {
+                count++;
+                while(vowel(s[index]))
+                {
+                    index++;// contiguous vowel will be counted as a one vowel 
+                }
+                continue;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        index++; // for slash('/') we faced 
+        if(count!=5)
+        {
+            cout<<"1"<<endl;
+            continue;
+        }
+        count=0;
+        while(s[index]!='/')
+        {
+            if(vowel(s[index]))
+            {
+                count++;
+                while(vowel(s[index]))
+                {
+                    index++;// contiguous vowel will be counted as a one vowel 
+                }
+                continue;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        index++; // for slash('/') we faced 
+        if(count!=7)
+        {
+            cout<<"2"<<endl;
+            continue;
+        }
+        count=0;
+       while(index<s.size())
+        {
+            if(vowel(s[index]))
+            {
+                count++;
+                while(vowel(s[index]))
+                {
+                    index++;// contiguous vowel will be counted as a one vowel 
+                }
+                continue;
+            }
+            else
+            {
+                index++;
+            }
+        }
+        if(count!=5)
+        {
+            cout<<"3"<<endl;
+            continue;
+        }
+        cout<<"Y"<<endl;
+    }
+}
