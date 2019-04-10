@@ -1,0 +1,60 @@
+
+// Just U have to find Out for which base this number's output can be perfect square ? One another thing that u have to start searching from maximum digit of the number plus 1 , because base obviously will be greater than the all digits of the number 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+bool base_convert(string s,int k)
+{
+    int sum=0;
+    reverse(s.begin(),s.end());
+    for(int i=0;i<s.size();i++)
+    {
+        sum=sum+(s[i]-'0')*(pow(k,i));
+    }
+    int sqr=sqrt(sum);
+    if(sqr*sqr==sum)
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+int maximum(string s)
+{
+    sort(s.begin(),s.end());
+    int l=s.size();
+    return s[l-1]-'0';
+}
+
+int main()
+{
+    int num,a;
+    string s;
+    while(cin>>s)
+    {
+        if(s=="0")
+        {
+
+            break;
+        }
+        else{
+            for(int i=maximum(s)+1;i<=100;i++)
+            {
+                if(base_convert(s,i))
+                {
+                    cout<<i<<endl;
+                    break;
+                }
+            }
+        }
+    }
+    return 0;
+}
