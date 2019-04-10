@@ -10,10 +10,11 @@
 বাবল শর্ট জানা না থাকলে , জেনে নাও । চলো কোড দেখে আসি , */
 
 
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
 #include<bits/stdc++.h>
-
-
-// Nayeem Mollick Joy ,Applied Physics & Electronic Engineering , University of Rajshahi.
 
 
 using namespace std;
