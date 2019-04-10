@@ -1,6 +1,10 @@
 
 // Try To Solve In C. Some C++ Code being right can get presentation error !! Just Take REmainder multiply it by ten . and Check this same remainder repeats or not 
 
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
 #include<cstdio>
 
 int main()
