@@ -1,0 +1,39 @@
+
+// We Have To Make The All Bricks Equal, So obviously we should pretend to make all element equal to average then , minimum number of moves will be possible,
+// when we are moving bricks from one place to another then automatically two works are done simultaneously ,that's why differences should be divided by 2
+
+#include<bits/stdc++.h>
+
+
+using namespace std;
+
+int main()
+{
+    int N,a,j=0;
+    while(cin>>N)
+    {
+        j++;
+        if(N==0)
+        {
+            break;
+        }
+        int sum=0;
+        int number=N;
+        vector<int>v;
+        while(N--)
+        {
+            cin>>a;
+            v.push_back(a);
+            sum=sum+a;
+        }
+        int ave=sum/number;
+        int diff=0;
+        for(int i=0;i<v.size();i++)
+        {
+            diff+=abs(v[i]-ave);
+        }
+        cout<<"Set #"<<j<<endl;cout<<"The minimum number of moves is ";
+        cout<<(diff>>1)<<"."<<endl<<endl;
+    }
+    return 0;
+}
