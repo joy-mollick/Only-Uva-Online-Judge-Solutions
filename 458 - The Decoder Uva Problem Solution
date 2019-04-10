@@ -17,6 +17,9 @@
 
 অনুরুপ ভাবে , আমরা যে * চিহ্ন বসিয়েছি , সেটার ASCII CODE  ,42  | অপরদিকে , 1 এর ASCII CODE, 49 ।।     কি , কিছু বুঝতে পারছো ??? 
 
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
 
 #include<bits/stdc++.h>
 
