@@ -21,6 +21,10 @@
 19ত    তাহলে , তোমায়  Resulting palindrome  ও কতোবার যোগের ঘটনাটি ঘটে ?? সেটা প্রিন্ট করতে হবে     হবে । উপরে , যোগের ঘটনা ঘটেছে মোট ৪ বার ।।
 
             চলো , কোড দেখে আসি ---------------  */
+            
+            /*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
 
 #include<stdio.h>
  
