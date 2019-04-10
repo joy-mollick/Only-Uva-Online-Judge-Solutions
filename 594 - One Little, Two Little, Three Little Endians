@@ -1,0 +1,32 @@
+
+// You Have To reverse its bits but in costom order that means for one (00000000 00000000 00000000 00000001) this whole will be reversed
+// groupwise(8) and turned will be (00000001  00000000 00000000 00000000) which means to be 16777216 .
+// we use pointer char* which can hold the 4 bytes by grouping(8) then just reverse this char* pointer using swap easily .As this is pointer ,so the rev automatically changed.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define swap(a,b) a=a^b,b=a^b,a=a^b;
+
+int main()
+{
+    int a,rev;
+
+    while(scanf("%d",&a)!=EOF)
+
+    {
+
+    rev=a;
+
+    char *ptr;
+
+    ptr=(char *)&rev;
+    swap(ptr[0],ptr[3]);
+    swap(ptr[1],ptr[2]);
+    printf("%d converts to %d\n", a, rev);
+
+    }
+
+    return 0;
+}
