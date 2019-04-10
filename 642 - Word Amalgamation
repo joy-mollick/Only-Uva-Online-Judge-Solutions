@@ -1,0 +1,50 @@
+// Just Use of map and vector of stl .Implementation Problem 
+
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int num,a;
+    string s;
+    map< string,vector<string> >m;
+    while(cin>>s)
+    {
+            string s1=s;
+            sort(s1.begin(),s1.end());
+            m[s1].push_back(s);
+            if(s=="XXXXXX")
+            {
+                while(cin>>s)
+                {
+                    if(s=="XXXXXX")
+                    {
+                        return 0;
+                    }
+                    string s2=s;
+                    sort(s2.begin(),s2.end());
+                    if(m[s2].size()>=1)
+                    {
+                        vector<string>v=m[s2];
+                        sort(v.begin(),v.end());
+                        for(int i=0;i<v.size();i++)
+                        {
+                            cout<<v[i]<<endl;
+                        }
+                    }
+                    else{
+                        cout<<"NOT A VALID WORD"<<endl;
+                    }
+                    cout<<"******"<<endl;
+                }
+            }
+    }
+    return 0;
+}
