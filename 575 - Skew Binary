@@ -1,0 +1,26 @@
+// Just Base Conversion Custom System.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int skew_binary(string s)
+{
+
+    int ans=0;
+    for(int i=0;i<s.size();i++)
+    {
+        int po=s[i]-'0';
+        ans=ans+((pow(2,i+1))-1)*po;
+    }
+    return ans;
+}
+int main()
+{
+    string s;
+
+    while(cin>>s&&s!="0")
+    {
+        reverse(s.begin(),s.end());
+        cout<<skew_binary(s)<<endl;
+    }
+}
