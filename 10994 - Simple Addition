@@ -1,0 +1,36 @@
+
+// Drag and write ona paper .Try to find out the formula for modulo sum ,U will get it .
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+long long mod_sum(long long n)
+{
+    long long sum=0;
+    while(n!=0)
+    {
+        long long rem=n%10;
+        n=n/10;
+        sum=sum+((rem*(rem+1))/2)+(n*45);
+    }
+    return sum;
+}
+
+int main()
+{
+    long long x,y;
+    while(cin >> x >> y)
+    {
+        if(x<0 and y<0)break;
+
+        cout << mod_sum(y) -mod_sum(x-1) << endl;
+    }
+
+    return 0;
+}
