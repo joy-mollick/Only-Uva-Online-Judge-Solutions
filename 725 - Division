@@ -1,0 +1,70 @@
+//Just Greedy Brute Force and Nothing Else . Just To Check the two numbers contains different digits among each other 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+bool alldistinct(int n,int m)
+{
+    set<int>s;
+    int num=0,num2=0;
+    while(n!=0)
+    {
+        num++;
+        s.insert(n%10);
+        n=n/10;
+    }
+    if(num==4)
+    {
+        num++;
+        s.insert(0);
+    }
+    while(m!=0)
+    {
+        num2++;
+        s.insert(m%10);
+        m=m/10;
+    }
+    if(num2==4)
+    {
+        num2++;
+        s.insert(0);
+    }
+    return (s.size()==num+num2);
+}
+
+
+int main()
+{
+    int tc,num,count = 0;
+    while(scanf("%d",&num)&&num!=0){
+      bool ok=false;
+      count++;
+      
+		if (count > 1){
+            printf("\n");}
+            
+      for(int i=1234;i<50000;i++)
+      {
+          int n=num*i;
+          if(n>=1234&&n<=99999){
+                
+          if(alldistinct(i,n))
+          {
+              printf("%05d / %05d = %d\n", n, i, num);
+              ok=true;
+          }
+          
+          }
+      }
+      if(!ok)
+      {
+          printf("There are no solutions for %d.\n",num);
+      }
+    }
+    return 0;
+}
