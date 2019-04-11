@@ -1,0 +1,42 @@
+// U have to approach greedy and dynamic .Be careful handling input format and otput and Nothing else here .........
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long dp[40001];
+
+void precalcul()
+{
+    memset(dp,0,sizeof(dp));
+    dp[0]=1;
+    long coins[]={10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 5};
+        for(int j=0;j<11;j++)
+        {
+            for(int i=coins[j];i<=40000;i++)
+            {
+                dp[i]=dp[i]+dp[i-coins[j]];
+            }
+        }
+}
+
+int main()
+{
+    precalcul();
+    long a , b;
+    long money;
+    while(scanf("%ld.%ld",&a,&b))
+    {
+        money=a*100+b;
+        if(money==0)
+        {
+            break;
+        }
+        printf("%3ld.%.2ld%17ld\n",a,b,dp[money]);
+    }
+    return 0;
+}
