@@ -1,0 +1,43 @@
+// Simple dp problem 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long dp[30001];
+
+void precalcul()
+{
+    memset(dp,0,sizeof(dp));
+    dp[0]=1;
+    long coins[5]={1,5,10,25,50};
+        for(int j=0;j<5;j++)
+        {
+            for(int i=coins[j];i<=30000;i++)
+            {
+                dp[i]=dp[i]+dp[i-coins[j]];
+            }
+        }
+}
+
+int main()
+{
+    precalcul();
+    int money;
+    while(cin>>money)
+    {
+        if(dp[money]>1)
+        {
+            printf("There are %ld ways to produce %d cents change.\n",dp[money],money);
+        }
+        else{
+            printf("There is only %ld way to produce %d cents change.\n",dp[money],money);
+        }
+    }
+    return 0;
+}
