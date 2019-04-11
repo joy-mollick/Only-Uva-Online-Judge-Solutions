@@ -1,0 +1,37 @@
+
+// PreCalCulation Is The Good Habit , It will reduce runtime .Just Basic dp is used here 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long dp[100001];
+
+void precalcul()
+{
+    memset(dp,0,sizeof(dp));
+    dp[0]=1;
+    long coins[5]={1,5,10,25,50};
+        for(int j=0;j<5;j++)
+        {
+            for(int i=coins[j];i<=100000;i++)
+            {
+                dp[i]=dp[i]+dp[i-coins[j]];
+            }
+        }
+}
+
+int main()
+{
+    precalcul();
+    int money;
+    while(cin>>money)
+    {
+        cout<<dp[money]<<endl;
+    }
+    return 0;
+}
