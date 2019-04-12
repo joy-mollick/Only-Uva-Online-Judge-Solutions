@@ -1,0 +1,30 @@
+
+// One kind of fibonacchi 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    long long dp[51];
+    dp[0]=0LL;
+    dp[1]=1LL;
+    dp[2]=2LL;
+    for(int i=3;i<=50;i++)
+    {
+        dp[i]=dp[i-1]+dp[i-2];
+    }
+    int n;
+    while(cin>>n&&n!=0)
+    {
+        cout<<dp[n]<<endl;
+    }
+    return 0;
+}
