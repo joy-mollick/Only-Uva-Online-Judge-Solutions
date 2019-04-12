@@ -1,0 +1,56 @@
+
+
+/*
+f N = 0 then Mnew = 0 and Fnew = 1
+
+if N =1 then Mnew = 1 and Fnew = 1
+
+if N = 2 then Mnew = 2 and Fnew = 2
+
+if N = 3 then Mnew = 4 and Fnew = 3
+
+if N = 4 then Mnew = 7 and Fnew = 5
+
+if N = 5 then Mnew = 12 and Fnew = 8
+
+if N = 6 then Mnew = ??? and Fnew = ???
+
+Now think deeply and find the relation 
+*/
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    long long female[45];
+    female[0]=1LL;
+    female[1]=1LL;
+    female[2]=2LL;
+    for(int i=3;i<=44;i++)
+    {
+        female[i]=female[i-1]+female[i-2];
+    }
+     long long male[45];
+    male[0]=0LL;
+    male[1]=1LL;
+    male[2]=2LL;
+    for(int i=3;i<=44;i++)
+    {
+        male[i]=male[i-1]+female[i-1];
+    }
+    int n;
+    while(cin>>n&&n>=0)
+    {
+        // total=(male[n]+female[n]);
+        
+        cout<<male[n]<<" "<<(male[n]+female[n])<<endl;
+    }
+    return 0;
+}
