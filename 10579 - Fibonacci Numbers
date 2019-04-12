@@ -1,0 +1,29 @@
+
+// Just Use BigInteger of Java , Nothing Else 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		BigInteger[] f = new BigInteger[5000];
+		f[1] = BigInteger.ONE;
+		f[2] = BigInteger.ONE;
+		for (int i = 3; i < 5000; i++)
+			f[i] = f[i - 1].add(f[i - 2]);
+
+		Scanner scanner = new Scanner(System.in);
+		while (scanner.hasNextInt()) {
+			int n = scanner.nextInt();
+			System.out.println(f[n]);
+		}
+
+	}
+
+}
