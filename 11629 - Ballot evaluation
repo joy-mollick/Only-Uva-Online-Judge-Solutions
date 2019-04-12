@@ -1,0 +1,130 @@
+
+// Just Do Whatever is wanted !! Try to code with patience 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+     int team,guess;
+     cin>>team>>guess;
+     map<string,int>m;
+     char name[10000];
+     int val1,val2;
+     while(team--)
+     {
+         scanf("%s%d.%d",name,&val1,&val2);
+         m[name]=val1*10+val2;
+     }
+     getchar();
+     for(int i=1;i<=guess;i++)
+     {
+         gets(name);
+         bool equa=false;
+     bool les=false;
+     bool great=false;
+         int sum=0,right_num=0;
+         string s="";
+         bool comparator=false;
+         for(int j=0;j<strlen(name);j++)
+         {
+             if(!(name[j]=='>'||name[j]=='<'||name[j]=='=')){
+             if(!comparator){
+             if(isalpha(name[j])||(name[j]>='0'&&name[j]<='9'))
+             {
+                 s=s+name[j];
+             }
+             else if(name[j]==' '||name[j]=='+')
+             {
+                 if(s!="")
+                 {
+                     sum=sum+m[s];
+                     s="";
+                 }
+             }
+             }
+         }
+             else if(name[j]=='>'||name[j]=='<'||name[j]=='=')
+             {
+                 comparator=true;
+                 if(name[j]=='=')
+                 {
+                     equa=true;
+                 }
+                 if(name[j]=='>')
+                 {
+                     les=true;
+                 }
+                 if(name[j]=='<')
+                 {
+                     great=true;
+                 }
+             }
+              if(comparator&&name[j]>='0'&&name[j]<='9')
+             {
+                 right_num=right_num*10+(name[j]-'0');
+             }
+         }
+         printf("Guess #%d was ", i);
+         right_num=right_num*10;
+         if(equa&&!les&&!great)
+         {
+             if(right_num==sum)
+             {
+                 printf("correct.\n");
+             }
+             else{
+                printf("incorrect.\n");
+             }
+         }
+          if(equa&&les&&!great)
+         {
+             if(sum>=right_num)
+             {
+                 printf("correct.\n");
+             }
+              else{
+                printf("incorrect.\n");
+             }
+         }
+          if(equa&&!les&&great)
+         {
+             if(sum<=right_num)
+             {
+                 printf("correct.\n");
+             }
+              else{
+                printf("incorrect.\n");
+             }
+         }
+          if(!equa&&!les&&great)
+         {
+             if(sum<right_num)
+             {
+                 printf("correct.\n");
+             }
+              else{
+                printf("incorrect.\n");
+             }
+         }
+          if(!equa&&les&&!great)
+         {
+             if(sum>right_num)
+             {
+                 printf("correct.\n");
+             }
+              else{
+                printf("incorrect.\n");
+             }
+         }
+
+     }
+    return 0;
+}
