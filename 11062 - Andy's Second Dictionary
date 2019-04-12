@@ -1,0 +1,55 @@
+
+// Use a set to store the word and care about hyphene 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+
+    char s[50001];
+    string word="";
+    set<string>word_list;
+    while(gets(s))
+    {
+        int length=strlen(s);
+        for(int i=0;i<length;i++)
+        {
+            if(isalpha(s[i]))
+            {
+                char c=tolower(s[i]);
+                word=word+c;
+            }
+            else if(s[i]=='-')
+            {
+                if(i!=length-1)
+                {
+                    word=word+s[i];
+                }
+            }
+            else if(word!=""){
+                    word_list.insert(word);
+            word="";
+            }
+        }
+        if(word!=""&&s[length-1]!='-')
+        {
+            word_list.insert(word);
+            word="";
+        }
+    }
+   set<string>::iterator it;
+   for(it=word_list.begin();it!=word_list.end();it++)
+   {
+       cout<<*it<<endl;
+   }
+    return 0;
+}
