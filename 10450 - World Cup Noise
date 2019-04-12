@@ -1,0 +1,33 @@
+
+// Just Use of Fibonacchi Series .Nothing Else here 
+
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main()
+{
+    long long dp[51];
+    dp[0]=1LL;
+    dp[1]=2LL;
+    dp[2]=3LL;
+    for(int i=3;i<=50;i++)
+    {
+        dp[i]=dp[i-1]+dp[i-2];
+    }
+    int n,N;
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>N;
+        printf("Scenario #%d:\n",i);
+        cout<<dp[N]<<endl<<endl;
+    }
+    return 0;
+}
