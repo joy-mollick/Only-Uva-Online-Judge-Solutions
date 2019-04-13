@@ -1,0 +1,84 @@
+// I have used circular linked list containing nodes and complex simulation .Try to use another one .It will be difficult to understand for you if don't have strong idea about linked list  
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+map<int,bool>m;
+int N;
+
+struct node
+{
+    int data;
+    struct node*next;
+};
+
+struct node* new_node(int data)
+{
+    struct node*temp=new node();
+    temp->data=data;
+    temp->next=NULL;
+    return temp;
+}
+
+int main()
+{
+    int last=0;
+    while(scanf("%d",&N)==1&&N!=0){
+            {
+                if(N==13)
+                {
+                    printf("1\n");
+                    continue;
+                }
+            }
+    struct node *root=new_node(1);
+    struct node*prev=root;
+    m[1]=true;
+    for(int i=2;i<=N;i++)
+    {
+        struct node* nw=new_node(i);
+        m[i]=true;
+        prev->next=nw;
+        prev=nw;
+    }
+    prev->next=root;
+    struct node*main=root;
+
+    for(int ans=3;ans<=100000;ans++){
+    int count=0,rount=0;
+     last;
+     root=main;
+    while(true)
+    {
+        if(m[root->data]==true){
+        count++;
+        }
+         if(count%ans==1&&m[root->data]==true)
+        {
+            m[root->data]=false;
+            last=root->data;
+            rount++;
+        }
+        root=root->next;
+        if(rount==N)
+        {
+            break;
+        }
+    }
+    if(last==13)
+    {
+        last=ans;
+        break;
+    }
+    for(int p=1;p<=N;p++)
+    {
+        m[p]=true;
+    }
+    }
+
+    printf("%d\n",last);
+    m.clear();
+    }
+    return 0;
+}
