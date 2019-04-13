@@ -1,0 +1,47 @@
+
+// We Have To Think That ,pair of five and two will contribute zero so be careful about to count the number of fives and twos and calculate the last digit by modulo by 10 and then which twos are not contributing for trailing zeroes then multiplay them with the last_digit 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int precalculation(int N)
+{
+    int n2=0,n5=0;
+    int last_digit=1;
+    for(int i=2;i<=N;i++)
+    {
+        int num=i;
+        while(num%2==0)
+        {
+            num=num>>1;
+            n2++;
+        }
+        while(num%5==0)
+        {
+            num=num/5;
+            n5++;
+        }
+        last_digit=(last_digit*num)%10;
+    }
+    for(int j=0;j<n2-n5;j++)
+    {
+        last_digit=(last_digit*2)%10;
+    }
+    return last_digit;
+}
+
+int main()
+{
+   int N;
+   while(scanf("%d",&N)!=EOF)
+   {
+       printf("%5d -> %d\n", N, precalculation(N));
+   }
+   return 0;
+}
