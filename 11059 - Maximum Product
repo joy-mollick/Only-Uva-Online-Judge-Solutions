@@ -1,0 +1,37 @@
+
+// Normal Brute force approach , I got first wrong due to not using long long .Care for this 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   long long N,count=1;
+   long long arr[20];
+   while(scanf("%lld",&N)!=EOF)
+   {
+       for(int i=0;i<N;i++)
+       {
+           scanf("%lld",&arr[i]);
+       }
+       long long mx=0;
+       for(int i=0;i<N;i++)
+       {
+           long long product=1;
+           for(int j=i;j<N;j++)
+           {
+               product=product*arr[j];
+                mx=max(mx,product);
+           }
+       }
+       printf("Case #%lld: The maximum product is %lld.\n\n",count,mx);
+       count++;
+   }
+   return 0;
+}
+
