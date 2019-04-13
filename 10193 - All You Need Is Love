@@ -1,0 +1,44 @@
+
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+
+int convert(string s)
+{
+    int integr=0;
+    int p=s.size()-1;
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]=='1'){
+        integr+=pow(2,p);}
+        p--;
+    }
+    return integr;
+}
+
+int main()
+{
+   int N,count=1;
+   cin>>N;
+   string s1,s2;
+   while(N--)
+   {
+      cin>>s1>>s2;
+      int a=convert(s1);
+      int b=convert(s2);
+      int gcd=__gcd(a,b);
+      if(gcd>1)
+      printf("Pair #%d: All you need is love!\n",count);
+      else
+      printf("Pair #%d: Love is not all you need!\n",count);
+
+      count++;
+   }
+   return 0;
+}
