@@ -1,0 +1,67 @@
+
+// Just Use Normal dfs as stated . REad Carefully the description 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+map<int,int>cost;
+map< int,vector<int> >v;
+bool vis[101];
+
+int sum=0;
+int lst,next_node_no;
+
+void dfs(int i)
+{
+    vis[i]=true;
+    int mx=0,next=-1;
+    for(int j=0;j<v[i].size();j++)
+    {
+        if(vis[v[i][j]]==false)
+        {
+            if(mx<cost[v[i][j]])
+            {
+                next=v[i][j];
+                mx=cost[v[i][j]];
+            }
+        }
+    }
+    if(next!=-1)
+    {
+        next_node_no=next;
+        sum=sum+mx;
+        dfs(next);
+    }
+}
+
+int main()
+{
+   int tc,n,m,a,u,u1;
+   scanf("%d",&tc);
+   for(int r=1;r<=tc;r++)
+   {
+       scanf("%d%d",&n,&m);
+       for(int i=0;i<n;i++)
+       {
+           scanf("%d",&a);
+           cost[i]=a;
+       }
+       while(m--)
+       {
+           scanf("%d%d",&u,&u1);
+           v[u].push_back(u1);
+       }
+       memset(vis,false,sizeof(vis));
+       sum=0;
+       dfs(0);
+       printf("Case %d: %d %d\n",r,sum,next_node_no);
+       cost.clear();
+       v.clear();
+   }
+   return 0;
+}
