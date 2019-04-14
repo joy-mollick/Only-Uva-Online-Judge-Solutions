@@ -1,0 +1,55 @@
+
+// Though It is a graph problem , U can solve it manually by checking for a star that it's eight position is star or not then u can count total stars, nothing else 
+
+/*
+Nayeem Mollick Joy , Electrical & Electronic Engineering , University of Rajshahi.
+Passionate Contest Programmer , Coder , Android Developer */
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n,m,i,j;
+    while(scanf("%d%d",&n,&m)&&n!=0&&m!=0)
+    {
+        char s[n+1][m+1];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                cin>>s[i][j];
+            }
+        }
+        int total_starts=0;
+        bool eight_position_available=false;
+        for (i=0 ; i<n ; i++)
+            {
+                for (j=0 ; j<m ; j++)
+                {
+                    if (s[i][j]=='*')
+                    {
+                        if (s[i-1][j-1]=='*' && i-1>=0 && j-1>=0) eight_position_available=true ;
+                        if (s[i-1][j]=='*' && i-1>=0 ) eight_position_available=true ;
+                        if (s[i-1][j+1]=='*' && i-1>=0 && j+1<m ) eight_position_available=true ;
+                        if (s[i][j-1]=='*'  && j-1>=0 ) eight_position_available=true ;
+                        if (s[i][j+1]=='*'  && j+1<m ) eight_position_available=true ;
+                        if (s[i+1][j-1]=='*' && i+1<n && j-1>=0 ) eight_position_available=true;
+                        if (s[i+1][j]=='*' && i+1<n ) eight_position_available=true ;
+                        if (s[i+1][j+1]=='*' && i+1<n && j+1<m) eight_position_available=true;
+                           if (eight_position_available==false) {
+                                total_starts++ ;
+                           }
+                     else {
+                            eight_position_available=false ;
+                     }
+
+                    }
+
+                }
+            }
+            printf("%d\n",total_starts);
+    }
+    return 0;
+}
