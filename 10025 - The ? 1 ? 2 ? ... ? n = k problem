@@ -1,0 +1,47 @@
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+/*
+struct node
+{
+    int id;
+    struct node *next;
+};
+struct node* head=NULL;
+struct node* add(int p)
+{
+    struct node *nw=new node();
+    nw->id=p;
+    nw->next=NULL;
+    return nw;
+}
+*/
+
+
+int main()
+{
+    long int tc,k,i;
+    scanf("%ld",&tc);
+    while(tc--)
+    {
+        scanf("%ld",&k);
+        if(k<0)
+        {
+            k=k*(-1);
+        }
+        for(i=1;;i++)
+        {
+            long int ans=(i*(i+1))>>1;
+            if(ans>=k&&(ans-k)%2==0)
+            {
+                break;
+            }
+
+        }
+        printf("%ld\n",i);
+        if(tc) printf("\n");
+    }
+    return 0;
+}
