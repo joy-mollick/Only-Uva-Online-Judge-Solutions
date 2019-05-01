@@ -33,9 +33,6 @@ Don't see this code , just use this logic manually
 typedef unsigned long long ll;
 
 
-
-// Constraints are only 20 , So U can produce these values by using next_permutation then store these into res array.
-
 ll power(ll x, ll y,ll p)
 {
     ll res = 1;      // Initialize result
